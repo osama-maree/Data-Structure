@@ -1,4 +1,3 @@
-package arraylist;
 
 import java.util.Set;
 import java.Arrays;
@@ -13,29 +12,6 @@ public class ArraListO<E> implements MyArr<E> {
         size = 0;
         capacity = 10;
         Arr = new Object[capacity];
-    }
-
-    public boolean retainAll(Object[] arr) {
-        int c = 0;
-        for (int i = 0; i <= size; i++) {
-            int t = 0;
-            for (int j = 0; j < arr.length; j++) {
-                if ((Integer) Arr[i] == (Integer) arr[j]) {
-                    t++;
-                    break;
-                }
-            }
-            if (t == 0) {
-                for (int k = i; k <= size; k++) {
-                    Arr[k] = Arr[k + 1];
-                    size--;
-                }
-            }
-        }
-        if (c > 0) {
-            return true;
-        }
-        return false;
     }
 
     @Override
@@ -92,7 +68,7 @@ public class ArraListO<E> implements MyArr<E> {
         return false;
     }
 
-    void rotate(ArraListO list, int r) {
+    void rotate(ArraListO list, int r) { //rotate right
         for (int i = 0; i < r; i++) {
             list.addFirst(list.removeLast());
         }
@@ -106,50 +82,6 @@ public class ArraListO<E> implements MyArr<E> {
         }
         Arr[size] = e;
         size++;
-    }
-
-    public void duplicate() {
-        for (int i = 0; i < size - 1; i++) {
-            for (int j = 0; j < size - i - 1; j++) {
-                if ((int) Arr[j] > (int) Arr[j + 1]) {
-
-                    int temp = (int) Arr[j];
-
-                    Arr[j] = Arr[j + 1];
-
-                    Arr[j + 1] = temp;
-
-                }
-            }
-        }
-
-        int t[] = new int[10000000];
-        for (int i = 0; i < 10000000; i++) {
-            t[i] = 0;
-        }
-        for (int i = 0; i < size; i++) {
-            t[(int) Arr[i]]++;
-        }
-        int y = 0;
-        for (int i = 0; i < 10000000; i++) {
-            if (t[i] >= 1) {
-                y++;
-            }
-        }
-        Object a[] = new Object[y];
-        int i = 0, Last = 0, j = 0;
-        while (i < size) {
-
-            if (i == 0 || (int) Arr[i] != Last) {
-                a[j] = Arr[i];
-                Last = (int) Arr[i];
-                j++;
-            }
-
-            i++;
-        }
-        size = y;
-        Arr = a;
     }
 
     @Override
@@ -346,27 +278,6 @@ public class ArraListO<E> implements MyArr<E> {
             copy.add(this.get(i));
         }
         return copy;
-    }
-
-    public boolean sameElements(ArraListO list) {
-        if (list.size != this.size) {
-            return false;
-        } else {
-            ArraListO<E> arr = list.copyArray();
-            for (int i = 0; i <= this.size; i++) {
-                for (int j = 0; j <= arr.size; j++) {
-                    if (arr.get(j).equals(this.get(i))) {
-                        arr.removeByIndex(j);
-                        break;
-                    }
-                }
-            }
-            if (arr.isEmpty()) {
-                return true;
-            }
-            return false;
-        }
-
     }
 
     public ArraListO subList(int index1, int index2) {
@@ -594,28 +505,7 @@ public class ArraListO<E> implements MyArr<E> {
         }
         return Loc;
     }
-//   public int Partition(int x,int y){
-//       int p=(int)Arr[x];
-//       int i=x;
-//       int j=y;
-//       while(i<j){
-//           do{ i++;
-//           }while((int)Arr[i]<=p);
-//          do{ j--;
-//           }while((int)Arr[j]>p);
-//               if(i<j)
-//                   this.swap(i,j);
-//       }
-//       this.swap(x, j);
-//       return j;
-//   }
-//      public void QuiqSort(int First,int Last){
-//       if(First<Last){
-//           int p=this.Partition(First, Last);
-//           QuiqSort(First,p);
-//            QuiqSort(p+1,Last);
-//       }
-//   }
+
     int s = 0;
 
     public int yosefparsh(int p, int r) {
