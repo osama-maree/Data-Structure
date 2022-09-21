@@ -1,4 +1,3 @@
-package arraylist;
 
 public class MyLinkedList1<E> {
 
@@ -350,7 +349,7 @@ public class MyLinkedList1<E> {
         return -1;
     }
 
-    public void nthNodefromLast(int n) {
+    public void nthNodefromLast(int n) {  
         Node c = head;
         int cx = size - n;
         while (cx != 0) {
