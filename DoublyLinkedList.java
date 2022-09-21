@@ -1,5 +1,3 @@
-package mylinkedlist;
-
 import java.util.*;
 
 public class DoublyLinkedList<E> {
@@ -177,13 +175,5 @@ public class DoublyLinkedList<E> {
             System.out.print(current.item + " ");
             current = current.next;
         }
-    }
-
-    public static void main(String[] args) {
-        DoublyLinkedList<Integer> p = new DoublyLinkedList<>();
-        Scanner s = new Scanner(System.in);
-      p.addfirst(5);
-      p.addLast(4);
-        p.printNodes();
     }
 }
