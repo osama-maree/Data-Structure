@@ -1,4 +1,3 @@
-package arraylist;
 
 public class MyStack<E> {
 
