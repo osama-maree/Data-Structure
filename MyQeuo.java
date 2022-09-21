@@ -1,6 +1,4 @@
 
-package mylinkedlist;
-
 public interface MyQeuo<E> {
 
     public abstract void enqueue(E a);
